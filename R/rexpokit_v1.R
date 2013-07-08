@@ -63,7 +63,8 @@
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -233,7 +234,8 @@ expokit_dgpadm_Qmat <- function(Qmat=NULL, t=2.1, transpose_needed=TRUE)
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -532,7 +534,8 @@ expokit_dmexpv_Qmat <- function(Qmat=NULL, t=2.1, inputprobs_for_fast=NULL, tran
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -548,7 +551,8 @@ expokit_dmexpv_Qmat <- function(Qmat=NULL, t=2.1, inputprobs_for_fast=NULL, tran
 #' # on a function that calls dmexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # DMEXPV functions
-#' list_of_P_matrices_dmexpv = expokit_wrapalldmexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dmexpv = expokit_wrapalldmexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dmexpv
 #' 
 expokit_dmexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp, liwsp, itrace, iflag, ia, ja, a, nz, res)
@@ -605,7 +609,8 @@ expokit_dmexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp, l
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -621,7 +626,8 @@ expokit_dmexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp, l
 #' # on a function that calls dmexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # DMEXPV functions
-#' list_of_P_matrices_dmexpv = expokit_wrapalldmexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dmexpv = expokit_wrapalldmexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dmexpv
 #' 
 expokit_mydmexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp, liwsp, itrace, iflag, ia, ja, a, nz)
@@ -679,7 +685,8 @@ expokit_mydmexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp,
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -695,7 +702,8 @@ expokit_mydmexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp,
 #' # on a function that calls dgexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # dgexpv functions
-#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dgexpv
 #' 
 expokit_mydgexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp, liwsp, itrace, iflag, ia, ja, a, nz)
@@ -736,7 +744,8 @@ expokit_mydgexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp,
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -752,7 +761,8 @@ expokit_mydgexpv_wrapper <- function(n, m, t, v, w, tol, anorm, wsp, lwsp, iwsp,
 #' # on a function that calls dmexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # DGEXPV functions
-#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dgexpv
 row_allzero_TF <- function(tmprow)
 	{
@@ -782,7 +792,8 @@ row_allzero_TF <- function(tmprow)
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -798,7 +809,8 @@ row_allzero_TF <- function(tmprow)
 #' # on a function that calls dmexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # DGEXPV functions
-#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dgexpv
 findrows_w_all_zeros <- function(matvec)
 	{
@@ -842,7 +854,8 @@ findrows_w_all_zeros <- function(matvec)
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -858,7 +871,8 @@ findrows_w_all_zeros <- function(matvec)
 #' # on a function that calls dmexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # DGEXPV functions
-#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dgexpv
 #' 
 expokit_wrapalldmexpv_tvals <- function(Qmat=NULL, tvals=c(2.1), inputprobs_for_fast=NULL, transpose_needed=TRUE, transform_to_coo_TF=TRUE, coo_n=NULL, force_list_if_1_tval=FALSE, check_for_0_rows=TRUE)
@@ -1184,7 +1198,8 @@ expokit_wrapalldmexpv_tvals <- function(Qmat=NULL, tvals=c(2.1), inputprobs_for_
 #' @examples # Example use:
 #' @examples
 #' # Make a Q matrix
-#' tmpmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' tmpmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Convert to coo format
 #' tmpmat_in_REXPOKIT_coo_fmt = mat2coo(tmpmat)
@@ -1261,7 +1276,8 @@ mat2coo <- function(tmpmat)
 #' @author Nicholas J. Matzke \email{matzke@@berkeley.edu}
 #' @examples # Example use:
 #' # Make a Q matrix
-#' tmpmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' tmpmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Covert to SparseM coo format
 #' tmpmat_in_SparseMcoo_fmt = as.matrix.coo(tmpmat)
@@ -1315,7 +1331,8 @@ SparseM_coo_to_REXPOKIT_coo <- function(tmpmat_in_SparseMcoo_fmt)
 #' @examples # Example use:
 #' ia = c(1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4)
 #' ja = c(1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4)
-#' a  = c(-1.218, 0.126, 0.168, 0.126, 0.504, -0.882, 0.504, 0.672, 0.336, 0.252, -1.050, 0.252, 0.378, 0.504, 0.378, -1.050)
+#' a  = c(-1.218, 0.126, 0.168, 0.126, 0.504, -0.882, 0.504, 
+#' 0.672, 0.336, 0.252, -1.050, 0.252, 0.378, 0.504, 0.378, -1.050)
 #' coomat = cbind(ia, ja, a)
 #' print(coomat)
 #' n = 4
@@ -1367,7 +1384,8 @@ coo2mat <- function(coomat, n=max(max(coomat[,1]), max(coomat[,2])), transpose_n
 #' @author Nicholas J. Matzke \email{matzke@@berkeley.edu}
 #' @examples # Example use:
 #' # Make a Q matrix
-#' tmpmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' tmpmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Convert to REXPOKIT coo format
 #' tmpmat_in_REXPOKIT_coo_fmt = mat2coo_forloop(tmpmat)
@@ -1489,7 +1507,8 @@ mat2coo_forloop <- function(tmpmat)
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -1513,7 +1532,8 @@ mat2coo_forloop <- function(tmpmat)
 #' # on a function that calls dmexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # DGEXPV functions
-#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dgexpv
 #' 
 expokit_dgexpv_Qmat <- function(Qmat=NULL, t=2.1, inputprobs_for_fast=NULL, transpose_needed=TRUE, transform_to_coo_TF=TRUE, coo_n=NULL, anorm=NULL, check_for_0_rows=TRUE)
@@ -1537,7 +1557,7 @@ expokit_dgexpv_Qmat <- function(Qmat=NULL, t=2.1, inputprobs_for_fast=NULL, tran
 		{
 		# Default Qmat
 		cat("\nWARNING: expokit_dgexpv_Qmat() was provided a Qmat with value NULL.  Example Qmat provided instead\n")
-		matvec = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+		matvec = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168,  0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 		}
 	# Check if t is blank
 	if (is.null(t))
@@ -1790,7 +1810,8 @@ expokit_dgexpv_Qmat <- function(Qmat=NULL, t=2.1, inputprobs_for_fast=NULL, tran
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -1859,7 +1880,8 @@ expokit_dgexpv_Qmat <- function(Qmat=NULL, t=2.1, inputprobs_for_fast=NULL, tran
 #' 
 #' # Run the wrapper function	
 #' 
-#' tmpoutmat = expokit_dgexpv_wrapper(n, m, timeval, v, w, tol, anorm, wsp, lwsp, iwsp, liwsp, itrace, iflag, ia, ja, a, nz, res)
+#' tmpoutmat = expokit_dgexpv_wrapper(n, m, timeval, v, w, tol, anorm, wsp, 
+#' lwsp, iwsp, liwsp, itrace, iflag, ia, ja, a, nz, res)
 #' 
 #' print(tmpoutmat)
 #'
@@ -1916,7 +1938,8 @@ expokit_dgexpv_wrapper <- function(n, m, timeval, v, w, tol, anorm, wsp, lwsp, i
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 
+#' 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -1942,7 +1965,8 @@ expokit_dgexpv_wrapper <- function(n, m, timeval, v, w, tol, anorm, wsp, lwsp, i
 #' # on a function that calls dmexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # DGEXPV functions
-#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dgexpv
 #'
 expokit_wrapalldgexpv_tvals <- function(Qmat=NULL, tvals=c(2.1), inputprobs_for_fast=NULL, transpose_needed=TRUE, transform_to_coo_TF=TRUE, coo_n=NULL, force_list_if_1_tval=FALSE, check_for_0_rows=TRUE)

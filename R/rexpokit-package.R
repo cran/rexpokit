@@ -3,8 +3,8 @@
 #' \tabular{ll}{
 #' Package: \tab rexpokit\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.24\cr
-#' Date: \tab 2013-02-10\cr
+#' Version: \tab 0.24.1\cr
+#' Date: \tab 2013-07-08\cr
 #' License: \tab GPL (>= 2)\cr
 #' LazyLoad: \tab yes\cr
 #' }
@@ -35,11 +35,11 @@
 #'
 #' Various messages on discussion boards have asked whether or
 #' not there is an R package that uses EXPOKIT.  There are only two as of this
-#' writing (January 2013) -- \code{\link[diversitree:find.mle]{diversitree}} and \code{\link[ctarma]{ctarma}}.
+#' writing (January 2013) -- \code{\link[diversitree:find.mle]{diversitree}} and \code{ctarma}.
 #' However, diversitree's usage is nested deeply in a series of dynamic functions
 #' and integrated with additional libraries (e.g. deSolve) and so is very difficult
-#' to extract for general usage, and \code{\link[ctarma]{ctarma}} implements only
-#' ZEXPM via \code{\link[ctarma]{ctarma}}::\code{\link[ctarma:zexpm]{zexpm}}.  Niels Richard Hansen \email{Niels.R.Hansen@@math.ku.dk}
+#' to extract for general usage, and \code{ctarma} implements only
+#' ZEXPM via \code{ctarma}::\code{zexpm}.  Niels Richard Hansen \email{Niels.R.Hansen@@math.ku.dk}
 #' is also working on an implementation of certain EXPOKIT functions.
 #'
 #' (See the additional notes file EXPOKIT_For_Dummies_notes_v1.txt for
@@ -160,7 +160,8 @@
 #' #
 #' # The Q matrix includes the stationary base freqencies, which Pmat 
 #' # converges to as t becomes large.
-#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+#' Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 
+#' 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 #' 
 #' # Make a series of t values
 #' tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -196,11 +197,13 @@
 #' # on a function that calls dmexpv/dgexpv), returning a list of probability matrices.
 #' 
 #' # DMEXPV functions
-#' list_of_P_matrices_dmexpv = expokit_wrapalldmexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dmexpv = expokit_wrapalldmexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dmexpv
 #' 
 #' # DGEXPV functions
-#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, tvals=tvals, transpose_needed=TRUE)
+#' list_of_P_matrices_dgexpv = expokit_wrapalldgexpv_tvals(Qmat=Qmat, 
+#' tvals=tvals, transpose_needed=TRUE)
 #' list_of_P_matrices_dgexpv
 #' 
 #' # Check if there are differences in the results (might only happen for large problems)

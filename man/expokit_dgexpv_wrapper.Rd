@@ -79,7 +79,8 @@
 #
 # The Q matrix includes the stationary base freqencies, which Pmat
 # converges to as t becomes large.
-Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168, 0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
+Qmat = matrix(c(-1.218, 0.504, 0.336, 0.378, 0.126, -0.882, 0.252, 0.504, 0.168,
+0.504, -1.05, 0.378, 0.126, 0.672, 0.252, -1.05), nrow=4, byrow=TRUE)
 
 # Make a series of t values
 tvals = c(0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 14)
@@ -148,7 +149,8 @@ timeval = tvals[2]
 
 # Run the wrapper function
 
-tmpoutmat = expokit_dgexpv_wrapper(n, m, timeval, v, w, tol, anorm, wsp, lwsp, iwsp, liwsp, itrace, iflag, ia, ja, a, nz, res)
+tmpoutmat = expokit_dgexpv_wrapper(n, m, timeval, v, w, tol, anorm, wsp,
+lwsp, iwsp, liwsp, itrace, iflag, ia, ja, a, nz, res)
 
 print(tmpoutmat)
 }
