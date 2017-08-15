@@ -115,12 +115,11 @@ for (t in tvals)
 	}
 }
 \author{
-  Nicholas J. Matzke \email{matzke@berkeley.edu}
+  Nicholas J. Matzke \email{nickmatzke.ncse@gmail.com} and Drew Schmidt
+  \email{schmidt@math.utk.edu}
 }
 \seealso{
   \code{\link{mat2coo}}
-
-  \code{\link{expokit_dmexpv_wrapper}}
 
   \code{\link{expokit_wrapalldmexpv_tvals}}
 }
