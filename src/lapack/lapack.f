@@ -32,7 +32,7 @@ c     FIX for Warning: Unused dummy argument 'uplo'
       end if
 
 c     FIX for Warning: Unused dummy argument 'wrk'
-      if (REALPART(WRK(LWRK)) > 0) then
+      if (REAL(WRK(LWRK)) > 0) then
         continue
       end if
 
@@ -57,7 +57,7 @@ c     FIX for Warning: Unused dummy argument 'uplo'
       end if
 
 c     FIX for Warning: Unused dummy argument 'wrk'
-      if (REALPART(WRK(LWRK)) > 0) then
+      if (REAL(WRK(LWRK)) > 0) then
         continue
       end if
 
@@ -129,12 +129,12 @@ c     dreal(zdumr) = zdumr
 c     dimag(zdumi) = (0.0d0,-1.0d0)*zdumi
 
 c     Statement function:
-c      cabs1(zdum) = dabs(REALPART(zdum)) + dabs(IMAGPART(zdum))
+c      cabs1(zdum) = dabs(REAL(zdum)) + dabs(AIMAG(zdum))
 c     FIX:
 c      double precision cabs1
 c      double precision pta, ptb
-c      pta = REALPART(zdum)
-c      ptb = IMAGPART(zdum)
+c      pta = REAL(zdum)
+c      ptb = AIMAG(zdum)
 c      ((dabs(pta)+dabs(ptb))
 
 
@@ -156,8 +156,8 @@ c        zero pivot implies this column already triangularized
 c
 
 c        FIX:
-         pta = REALPART(a(l,k))
-         ptb = IMAGPART(a(l,k))
+         pta = REAL(a(l,k))
+         ptb = AIMAG(a(l,k))
          cabs1 = dabs(pta)+dabs(ptb)
 c         if (cabs1(a(l,k)) .eq. 0.0d0) go to 40
          if (cabs1 .eq. 0.0d0) go to 40
@@ -194,8 +194,8 @@ c
       ipvt(n) = n
 
 c     FIX:
-      pta = REALPART(a(n,n))
-      ptb = IMAGPART(a(n,n))
+      pta = REAL(a(n,n))
+      ptb = AIMAG(a(n,n))
       cabs1 = dabs(pta)+dabs(ptb)
 
 c     if (cabs1(a(n,n)) .eq. 0.0d0) info = n
@@ -402,7 +402,7 @@ c      dreal(zdumr) = zdumr
 c      dimag(zdumi) = (0.0d0,-1.0d0)*zdumi
 
 c FIX:
-c      cabs1(zdum) = dabs(REALPART(zdum)) + dabs(IMAGPART(zdum))
+c      cabs1(zdum) = dabs(REAL(zdum)) + dabs(AIMAG(zdum))
 c
 c     initialize
 c
@@ -424,8 +424,8 @@ c     ...exit
             kpvt(1) = 1
             
 c           FIX:
-            pta = REALPART(a(1,1))
-            ptb = IMAGPART(a(1,1))
+            pta = REAL(a(1,1))
+            ptb = AIMAG(a(1,1))
             cabs1 = dabs(pta)+dabs(ptb)
            
 c           if (cabs1(a(1,1)) .eq. 0.0d0) info = 1
@@ -443,8 +443,8 @@ c
          km1 = k - 1
 
 c        FIX:
-         pta = REALPART(a(k,k))
-         ptb = IMAGPART(a(k,k))
+         pta = REAL(a(k,k))
+         ptb = AIMAG(a(k,k))
          cabs1 = dabs(pta)+dabs(ptb)
 
 c        absakk = cabs1(a(k,k))
@@ -459,8 +459,8 @@ c
          imax = izamax(k-1,a(1,k),1)
 
 c        FIX:
-         pta = REALPART(a(imax,k))
-         ptb = IMAGPART(a(imax,k))
+         pta = REAL(a(imax,k))
+         ptb = AIMAG(a(imax,k))
          cabs1 = dabs(pta)+dabs(ptb)
 
 c        colmax = cabs1(a(imax,k))
@@ -479,8 +479,8 @@ c
             do 40 j = imaxp1, k
 
 c              FIX:
-               pta = REALPART(a(imax,j))
-               ptb = IMAGPART(a(imax,j))
+               pta = REAL(a(imax,j))
+               ptb = AIMAG(a(imax,j))
                cabs1 = dabs(pta)+dabs(ptb)
 
 c              rowmax = dmax1(rowmax,cabs1(a(imax,j)))
@@ -490,8 +490,8 @@ c              rowmax = dmax1(rowmax,cabs1(a(imax,j)))
                jmax = izamax(imax-1,a(1,imax),1)
 
 c              FIX:
-               pta = REALPART(a(jmax,imax))
-               ptb = IMAGPART(a(jmax,imax))
+               pta = REAL(a(jmax,imax))
+               ptb = AIMAG(a(jmax,imax))
                cabs1 = dabs(pta)+dabs(ptb)
 
 c              rowmax = dmax1(rowmax,cabs1(a(jmax,imax)))
@@ -499,8 +499,8 @@ c              rowmax = dmax1(rowmax,cabs1(a(jmax,imax)))
    50       continue
 
 c           FIX:
-            pta = REALPART(a(imax,imax))
-            ptb = IMAGPART(a(imax,imax))
+            pta = REAL(a(imax,imax))
+            ptb = AIMAG(a(imax,imax))
             cabs1 = dabs(pta)+dabs(ptb)
 
 c           if (cabs1(a(imax,imax)) .lt. alpha*rowmax) go to 60
@@ -550,7 +550,7 @@ c
                mulk = -a(j,k)/a(k,k)
                t = dconjg(mulk)
                call zaxpy(j,t,a(1,k),1,a(1,j),1)
-               a(j,j) = dcmplx(REALPART(a(j,j)),0.0d0)
+               a(j,j) = dcmplx(REAL(a(j,j)),0.0d0)
                a(j,k) = mulk
   130       continue
 c
@@ -598,7 +598,7 @@ c
                   call zaxpy(j,t,a(1,k-1),1,a(1,j),1)
                   a(j,k) = mulk
                   a(j,k-1) = mulkm1
-                  a(j,j) = dcmplx(REALPART(a(j,j)),0.0d0)
+                  a(j,j) = dcmplx(REAL(a(j,j)),0.0d0)
   170          continue
   180       continue
 c
@@ -861,7 +861,7 @@ c      complex(kind=8) zdumr,zdumi
 
 c      dreal(zdumr) = zdumr
 c      dimag(zdumi) = (0.0d0,-1.0d0)*zdumi
-c      cabs1(zdum) = dabs(REALPART(zdum)) + dabs(IMAGPART(zdum))
+c      cabs1(zdum) = dabs(REAL(zdum)) + dabs(AIMAG(zdum))
 c
 c     initialize
 c
@@ -884,8 +884,8 @@ c     ...exit
 
 c           FIX:
 c           if (cabs1(a(1,1)) .eq. 0.0d0) info = 1
-      pta = REALPART(a(1,1))
-      ptb = IMAGPART(a(1,1))
+      pta = REAL(a(1,1))
+      ptb = AIMAG(a(1,1))
       cabs1 = dabs(pta)+dabs(ptb)
       if (cabs1 .eq. 0.0d0) info=1
 
@@ -903,8 +903,8 @@ c
          km1 = k - 1
 
 c        FIX:
-         pta = REALPART(a(k,k))
-         ptb = IMAGPART(a(k,k))
+         pta = REAL(a(k,k))
+         ptb = AIMAG(a(k,k))
          cabs1 = dabs(pta)+dabs(ptb)
 
 c        absakk = cabs1(a(k,k))
@@ -917,8 +917,8 @@ c
 
 
 c        FIX:
-         pta = REALPART(a(imax,k))
-         ptb = IMAGPART(a(imax,k))
+         pta = REAL(a(imax,k))
+         ptb = AIMAG(a(imax,k))
          cabs1 = dabs(pta)+dabs(ptb)
 
 c        colmax = cabs1(a(imax,k))
@@ -936,8 +936,8 @@ c
             imaxp1 = imax + 1
             do 40 j = imaxp1, k
 c              FIX:
-               pta = REALPART(a(imax,j))
-               ptb = IMAGPART(a(imax,j))
+               pta = REAL(a(imax,j))
+               ptb = AIMAG(a(imax,j))
                cabs1 = dabs(pta)+dabs(ptb)
 c              rowmax = dmax1(rowmax,cabs1(a(imax,j)))
                rowmax = dmax1(rowmax,cabs1)
@@ -945,15 +945,15 @@ c              rowmax = dmax1(rowmax,cabs1(a(imax,j)))
             if (imax .eq. 1) go to 50
                jmax = izamax(imax-1,a(1,imax),1)
 c              FIX:
-               pta = REALPART(a(jmax,imax))
-               ptb = IMAGPART(a(jmax,imax))
+               pta = REAL(a(jmax,imax))
+               ptb = AIMAG(a(jmax,imax))
                cabs1 = dabs(pta)+dabs(ptb)
 c              rowmax = dmax1(rowmax,cabs1(a(jmax,imax)))
                rowmax = dmax1(rowmax,cabs1)
    50       continue
 c              FIX:
-            pta = REALPART(a(imax,imax))
-            ptb = IMAGPART(a(imax,imax))
+            pta = REAL(a(imax,imax))
+            ptb = AIMAG(a(imax,imax))
             cabs1 = dabs(pta)+dabs(ptb)
 c           if (cabs1(a(imax,imax)) .lt. alpha*rowmax) go to 60
             if (cabs1 .lt. alpha*rowmax) go to 60

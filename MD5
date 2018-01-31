@@ -1,5 +1,5 @@
 d791728a073bc009b4ffaf00b7599855 *COPYING
-70095915df96d83e45f0b0573b22f9ff *DESCRIPTION
+0b0ff7a65b44001df0161709fa394b93 *DESCRIPTION
 11957a5b0526332ea39b4062c289dfbd *NAMESPACE
 03538a268b3924138860a5fcdfce06b1 *NEWS
 a555b057c8f8f68f2f9cfd33d7b6be84 *R/expm.r
@@ -49,8 +49,8 @@ e7d6b62bf61dbdcdd953170c1df1f5b3 *man/zzz_mat2coo_forloop.Rd
 7d3695445adcd7d6abfc10ad7e5b65be *src/coo.cpp
 02c35d203bb7492e349d8c745414c995 *src/expokit.h
 f6adaf3add5c5772ac4475d7c99295ce *src/itscale5.f
-96919e9a53b5c26b7ac86e53a4339aec *src/lapack/blas_mod.f
-e1b2473ea95209c13a4d4b0dafc0d28e *src/lapack/lapack.f
+ec8b865cf3a35b1c44b8915b8e4e9102 *src/lapack/blas_mod.f
+3cc084cb5e764494dd953dcf555f6996 *src/lapack/lapack.f
 194c227072610c450b88246c8e31bfdc *src/mataid.f
 9d6e7c836cf953f2c8b781c219fa0858 *src/my_expokit.f
 98cf976918d0cb1e26a6b09cdb8d0940 *src/my_matexp.f

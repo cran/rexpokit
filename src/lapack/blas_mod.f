@@ -1,7 +1,7 @@
 
 COMMON ERRORS THAT HAVE STUPID REASONS
 
-* pta = REALPART(a)
+* pta = REAL(a)
 * 1
 * Error: Non-numeric character in statement label at (1)
 *
@@ -9,7 +9,7 @@ COMMON ERRORS THAT HAVE STUPID REASONS
 * 
 
 
-*  if ((dabs(REALPART(a(1,1)))+dabs(IMAGPART(a(1,1)))).eq.0.0d0) &
+*  if ((dabs(REAL(a(1,1)))+dabs(AIMAG(a(1,1)))).eq.0.0d0) &
 * Warning: Line truncated at (1) [-Wline-truncation]
 * 
 * THIS MEANS: Lines have to end at about column 70
@@ -59,7 +59,7 @@ COMMON ERRORS THAT HAVE STUPID REASONS
 *     
 *     
 *     FIX:
-*      absx = DABS(REALPART(Zx(i)))
+*      absx = DABS(REAL(Zx(i)))
 *     
 *     
 !     ERROR:
@@ -70,8 +70,8 @@ COMMON ERRORS THAT HAVE STUPID REASONS
 !     NO:   absx = dabs(dimag(zx(i)))
 !     NO:   absx = dabs((0.0d0,-1.0d0)*zx(i))
 !     YES:  Comment out dimag "statement function",
-!           Just use IMAGPART
-*             absx = DABS(IMAGPART(Zx(i)))
+!           Just use AIMAG
+*             absx = DABS(AIMAG(Zx(i)))
 * 
 * 
 *     PROBLEM:
@@ -366,7 +366,7 @@ c      complex(kind=8) z,zz
 c      double precision t(2)
 c      equivalence (zz,t(1))
 c      zz = z
-      dcabs1 = dabs(REALPART(z)) + dabs(IMAGPART(z))
+      dcabs1 = dabs(REAL(z)) + dabs(AIMAG(z))
       return
       end
 *----------------------------------------------------------------------|
@@ -1866,8 +1866,8 @@ c
       IMPLICIT NONE
 !*--DZNRM24
 !*** Start of declarations inserted by SPAG
-      INTEGER IMAGPART
-      REAL REALPART
+      INTEGER AIMAG
+      REAL REAL
 !*** End of declarations inserted by SPAG
  
       LOGICAL imag , scale
@@ -1885,11 +1885,11 @@ c
  
 !     2017-08-11 fixes for "statement function" error
 !     dreal(zdumr) = zdumr
-!      dreal = REALPART(zdumr)
+!      dreal = REAL(zdumr)
  
 !     dimag(zdumi) = (0.0d0,-1.0d0)*zdumi
 !      dimag = (0.0d0,-1.0d0)*zdumi
-!      dimag = IMAGPART(zdumi)
+!      dimag = AIMAG(zdumi)
  
 !     PROBLEM:
 !     Obsolescent feature: DATA statement at (1) after the first executable statement
@@ -1961,7 +1961,7 @@ c
 !                                                 begin main loop
          DO ix = 1 , N
 !         absx = dabs(dreal(zx(i)))
-            absx = DABS(REALPART(Zx(i)))
+            absx = DABS(REAL(Zx(i)))
  
  
             imag = .FALSE.
@@ -2046,8 +2046,8 @@ c
 !     NO:   absx = dabs(dimag(zx(i)))
 !     NO:   absx = dabs((0.0d0,-1.0d0)*zx(i))
 !     YES:  Comment out dimag "statement function",
-!           Just use IMAGPART
-               absx = DABS(IMAGPART(Zx(i)))
+!           Just use AIMAG
+               absx = DABS(AIMAG(Zx(i)))
  
                imag = .TRUE.
                IF ( next.EQ.1 ) GOTO 20

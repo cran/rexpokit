@@ -1,7 +1,7 @@
 Package: rexpokit
 Type: Package
 Title: R Wrappers for EXPOKIT; Other Matrix Functions
-Version: 0.26.1
+Version: 0.26.2
 Date: 2017-08-15
 Authors@R: c(person("Nicholas J.", "Matzke", email="nickmatzke.ncse@gmail.com", role=
         c("aut", "cre", "cph")), person("Roger B.", "Sidje", email =
@@ -10,7 +10,7 @@ Authors@R: c(person("Nicholas J.", "Matzke", email="nickmatzke.ncse@gmail.com", 
 Author: Nicholas J. Matzke [aut, cre, cph],
   Roger B. Sidje [aut, cph],
   Drew Schmidt [aut]
-Maintainer: Nicholas J. Matzke <nickmatzke.ncse@gmail.com>
+Maintainer: ORPHANED
 Depends: R (>= 3.0.2)
 Imports: stats, Rcpp (>= 0.11.0)
 LinkingTo: Rcpp (>= 0.11.0)
@@ -32,7 +32,11 @@ URL: http://phylo.wikidot.com/rexpokit
 License: GPL (>= 2)
 LazyLoad: yes
 ByteCompile: yes
-Packaged: 2017-08-15 03:59:39 UTC; nickm
+Packaged: 2018-01-30 20:32:05 UTC; ripley
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2017-08-15 22:19:05 UTC
+Date/Publication: 2018-01-30 21:46:30
+X-CRAN-Original-Maintainer: Nicholas J. Matzke
+        <nickmatzke.ncse@gmail.com>
+X-CRAN-Comment: Orphaned and corrected on 2018-01-31 as Fortran errors
+        (shown by flang) were not corrected despite reminders
