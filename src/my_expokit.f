@@ -1595,7 +1595,7 @@
       integer ndeg, i, j, k, ip, ih, iy, iz
       parameter ( ndeg=7, ZERO=(0.0d0,0.0d0) )
       double precision alpha0
-      complex(kind=8) alpha(ndeg), theta(ndeg), tmpc
+      complex(kind=8) alpha(2*ndeg), theta(2*ndeg), tmpc
 
       intrinsic ABS,DBLE,CONJG,MIN
       

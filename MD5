@@ -1,5 +1,5 @@
 d791728a073bc009b4ffaf00b7599855 *COPYING
-0b0ff7a65b44001df0161709fa394b93 *DESCRIPTION
+480bec12667b399e0ea34e27f5d8771a *DESCRIPTION
 11957a5b0526332ea39b4062c289dfbd *NAMESPACE
 03538a268b3924138860a5fcdfce06b1 *NEWS
 a555b057c8f8f68f2f9cfd33d7b6be84 *R/expm.r
@@ -52,7 +52,7 @@ f6adaf3add5c5772ac4475d7c99295ce *src/itscale5.f
 ec8b865cf3a35b1c44b8915b8e4e9102 *src/lapack/blas_mod.f
 3cc084cb5e764494dd953dcf555f6996 *src/lapack/lapack.f
 194c227072610c450b88246c8e31bfdc *src/mataid.f
-9d6e7c836cf953f2c8b781c219fa0858 *src/my_expokit.f
+7c227d13774a8759292da5ae6dfbf015 *src/my_expokit.f
 98cf976918d0cb1e26a6b09cdb8d0940 *src/my_matexp.f
 648308b2b809710bfcdac560ac770bf1 *src/wrappers.cpp
 13c9b9eff0327e8a9fdf1f050320664c *tests/expm.R
