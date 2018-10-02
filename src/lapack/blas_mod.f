@@ -1,7 +1,19 @@
 
-COMMON ERRORS THAT HAVE STUPID REASONS
+*     2018-09-26 NJM edits: 
+*          changed REALPART to REAL
+*          changed IMAGPART to AIMAG
+*          changed DCONJG to CONJG
+*          ...throughout
+*          (I guess these are gfortran GNU extensions; cause 
+*           problems on flang compiler, according to
+*           email from Brian Ripley)
+*
 
-* pta = REAL(a)
+
+* 2017-08:
+* COMMON ERRORS THAT HAVE STUPID REASONS
+* 
+* pta = REALPART(a)
 * 1
 * Error: Non-numeric character in statement label at (1)
 *
@@ -9,7 +21,7 @@ COMMON ERRORS THAT HAVE STUPID REASONS
 * 
 
 
-*  if ((dabs(REAL(a(1,1)))+dabs(AIMAG(a(1,1)))).eq.0.0d0) &
+*  if ((dabs(REALPART(a(1,1)))+dabs(IMAGPART(a(1,1)))).eq.0.0d0) &
 * Warning: Line truncated at (1) [-Wline-truncation]
 * 
 * THIS MEANS: Lines have to end at about column 70
@@ -59,7 +71,7 @@ COMMON ERRORS THAT HAVE STUPID REASONS
 *     
 *     
 *     FIX:
-*      absx = DABS(REAL(Zx(i)))
+*      absx = DABS(REALPART(Zx(i)))
 *     
 *     
 !     ERROR:
@@ -70,8 +82,8 @@ COMMON ERRORS THAT HAVE STUPID REASONS
 !     NO:   absx = dabs(dimag(zx(i)))
 !     NO:   absx = dabs((0.0d0,-1.0d0)*zx(i))
 !     YES:  Comment out dimag "statement function",
-!           Just use AIMAG
-*             absx = DABS(AIMAG(Zx(i)))
+!           Just use IMAGPART
+*             absx = DABS(IMAGPART(Zx(i)))
 * 
 * 
 *     PROBLEM:
@@ -194,9 +206,16 @@ COMMON ERRORS THAT HAVE STUPID REASONS
 *     environment.
 *----------------------------------------------------------------------|
       SUBROUTINE XERBLA ( SRNAME, INFO )
+c      SUBROUTINE XERBLA ( SRNAME )
 *     ..    Scalar Arguments ..
       INTEGER            INFO
       CHARACTER(LEN=6)   SRNAME
+
+c     Because some combination of FORTRAN and CRAN updates means that
+c     print commands are not allowed without throwing warnings, errors
+c     I am commenting out the print statements, and setting
+c     INFO = 0 to make sure the variable is used.
+      INFO = 0
 
 c     Putting some if statements, so that these are not dummy variables 
       if (SRNAME .EQ. 'DGEMV ') then
@@ -544,8 +563,9 @@ c
       integer i,incx,incy,ix,iy,m,mp1,n
 c     FIX:
 c     double precision dx(1),dy(1),da
-      double precision dx(n),dy(n),da
-
+c      double precision dx(n),dy(n),da
+      double precision dx(n),dy(n)
+      
 c
       if(n.le.0)return
       if(incx.eq.1.and.incy.eq.1)go to 20
@@ -1777,7 +1797,7 @@ c       code for both increments equal to 1
    90             CONTINUE
                ELSE
                   DO 100, I = 1, M
-                     TEMP = TEMP + DCONJG( A( I, J ) )*X( I )
+                     TEMP = TEMP + CONJG( A( I, J ) )*X( I )
   100             CONTINUE
                END IF
                Y( JY ) = Y( JY ) + ALPHA*TEMP
@@ -1794,7 +1814,7 @@ c       code for both increments equal to 1
   120             CONTINUE
                ELSE
                   DO 130, I = 1, M
-                     TEMP = TEMP + DCONJG( A( I, J ) )*X( IX )
+                     TEMP = TEMP + CONJG( A( I, J ) )*X( IX )
                      IX   = IX   + INCX
   130             CONTINUE
                END IF
@@ -1865,9 +1885,15 @@ c
       DOUBLE PRECISION FUNCTION DZNRM2(N,Zx,Incx)
       IMPLICIT NONE
 !*--DZNRM24
+
 !*** Start of declarations inserted by SPAG
-      INTEGER AIMAG
-      REAL REAL
+
+!***  2018-09-26_NJM comment out
+!***  INTEGER IMAGPART
+!***  REAL REALPART
+
+!***  (part of attempt to remove REALPART, IMAGPART)
+
 !*** End of declarations inserted by SPAG
  
       LOGICAL imag , scale
@@ -1885,11 +1911,11 @@ c
  
 !     2017-08-11 fixes for "statement function" error
 !     dreal(zdumr) = zdumr
-!      dreal = REAL(zdumr)
+!      dreal = REALPART(zdumr)
  
 !     dimag(zdumi) = (0.0d0,-1.0d0)*zdumi
 !      dimag = (0.0d0,-1.0d0)*zdumi
-!      dimag = AIMAG(zdumi)
+!      dimag = IMAGPART(zdumi)
  
 !     PROBLEM:
 !     Obsolescent feature: DATA statement at (1) after the first executable statement
@@ -2046,7 +2072,7 @@ c
 !     NO:   absx = dabs(dimag(zx(i)))
 !     NO:   absx = dabs((0.0d0,-1.0d0)*zx(i))
 !     YES:  Comment out dimag "statement function",
-!           Just use AIMAG
+!           Just use IMAGPART
                absx = DABS(AIMAG(Zx(i)))
  
                imag = .TRUE.
@@ -2383,7 +2409,7 @@ c
                DO 110, I = 1, M
                   TEMP = ZERO
                   DO 100, L = 1, K
-                     TEMP = TEMP + DCONJG( A( L, I ) )*B( L, J )
+                     TEMP = TEMP + CONJG( A( L, I ) )*B( L, J )
   100             CONTINUE
                   IF( BETA.EQ.ZERO )THEN
                      C( I, J ) = ALPHA*TEMP
@@ -2427,7 +2453,7 @@ c
                END IF
                DO 190, L = 1, K
                   IF( B( J, L ).NE.ZERO )THEN
-                     TEMP = ALPHA*DCONJG( B( J, L ) )
+                     TEMP = ALPHA*CONJG( B( J, L ) )
                      DO 180, I = 1, M
                         C( I, J ) = C( I, J ) + TEMP*A( I, L )
   180                CONTINUE
@@ -2468,7 +2494,7 @@ c
                   TEMP = ZERO
                   DO 260, L = 1, K
                      TEMP = TEMP +
-     $                      DCONJG( A( L, I ) )*DCONJG( B( J, L ) )
+     $                      CONJG( A( L, I ) )*CONJG( B( J, L ) )
   260             CONTINUE
                   IF( BETA.EQ.ZERO )THEN
                      C( I, J ) = ALPHA*TEMP
@@ -2485,7 +2511,7 @@ c
                DO 300, I = 1, M
                   TEMP = ZERO
                   DO 290, L = 1, K
-                     TEMP = TEMP + DCONJG( A( L, I ) )*B( J, L )
+                     TEMP = TEMP + CONJG( A( L, I ) )*B( J, L )
   290             CONTINUE
                   IF( BETA.EQ.ZERO )THEN
                      C( I, J ) = ALPHA*TEMP
@@ -2504,7 +2530,7 @@ c
                DO 330, I = 1, M
                   TEMP = ZERO
                   DO 320, L = 1, K
-                     TEMP = TEMP + A( L, I )*DCONJG( B( J, L ) )
+                     TEMP = TEMP + A( L, I )*CONJG( B( J, L ) )
   320             CONTINUE
                   IF( BETA.EQ.ZERO )THEN
                      C( I, J ) = ALPHA*TEMP
@@ -2557,7 +2583,7 @@ c
       if(incx.lt.0)ix = (-n+1)*incx + 1
       if(incy.lt.0)iy = (-n+1)*incy + 1
       do 10 i = 1,n
-        ztemp = ztemp + dconjg(zx(ix))*zy(iy)
+        ztemp = ztemp + conjg(zx(ix))*zy(iy)
         ix = ix + incx
         iy = iy + incy
    10 continue
@@ -2567,7 +2593,7 @@ c
 c        code for both increments equal to 1
 c
    20 do 30 i = 1,n
-        ztemp = ztemp + dconjg(zx(i))*zy(i)
+        ztemp = ztemp + conjg(zx(i))*zy(i)
    30 continue
       zdotc = ztemp
       return
