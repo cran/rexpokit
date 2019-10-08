@@ -1,11 +1,11 @@
 d791728a073bc009b4ffaf00b7599855 *COPYING
-8012f456eaca80622e9d0a845d097a99 *DESCRIPTION
+7714e53da77ad1f71894120e1011b73f *DESCRIPTION
 11957a5b0526332ea39b4062c289dfbd *NAMESPACE
-1d1cda35e0600dba2deb29824aedf171 *NEWS
+fd528d21dce9cf3b7dd93c068742e59a *NEWS
 a555b057c8f8f68f2f9cfd33d7b6be84 *R/expm.r
 f71f4f5e88ba2abb62eb717c35452f30 *R/fermat.R
 08353785f7c6514407b5dd7549de1d0a *R/maxent.R
-ede1a0cdfe10105723bf9c0a42fd7acd *R/rexpokit-package.R
+edbc450925671f7c96ac804a24c51f67 *R/rexpokit-package.R
 5791dc5ebed04ef90d057bd5769f413f *R/rexpokit.R
 d07183b7a41034d81a1371e9fac64f83 *R/utils.r
 cefdb711b4833261adea2c0c8cc3cd5f *R/wrappers.r
@@ -14,7 +14,7 @@ fc6ae4fa893f6c00fc3f23f184624401 *README.md
 6bcdd70b04ce0e9b0a5495e91d4bb98f *demo/00Index
 7e32aaa30d10fe6c287f4c8908dbc195 *demo/expm.r
 b277a44151790903b7b785c536363ee0 *demo/expm_check.r
-614904f305ce1520578419cc286a2802 *inst/CITATION
+342ab5bd4510320a6a21be5862e29936 *inst/CITATION
 7b486d29cb6b83af1fdca962cf4ed971 *inst/LAPACK_LICENSE.txt
 03fac72f8b933a74a730b604575218e8 *inst/REFERENCES.bib
 6e66953e2dcae47e28967f51b494d3ec *inst/notes/2017-08-13_CRAN_submission.txt
@@ -23,6 +23,7 @@ fb2d29811629b3b000f1a3c8c4870dd9 *inst/notes/2018-10-02_submission_email.txt
 530cab2d0a8e53b7194ddf698bb9ff7b *inst/notes/2019-06-26_submission_email.txt
 8934f0f9f355af82696b52fb44f155c3 *inst/notes/2019-07-01_submission_email.txt
 0f9f06d8628251059d13d0265c70dd3c *inst/notes/2019-07-02_fix_LTO_errors_rexpokit.txt
+291128e65278103819c0c22de276d7bb *inst/notes/2019-07-02_submission_email.txt
 72cc8afc7e384035030050b1d992aefd *inst/notes/2019-07-02_submission_error.txt
 7faab5e90da45f645e8c21211de5d457 *inst/notes/EXPOKIT_For_Dummies_notes_v1.txt
 c3fa973b0976b94d5fd2a40a94a22957 *inst/notes/expokit_copyright.txt
@@ -34,6 +35,7 @@ dfdaa451b8df731a043e525e2470988a *inst/notes/src_changes_notes/2019-06-06_email.
 22a688622bb5fe2019138d7f69ac860c *inst/notes/src_changes_notes/2019-07-01_00install.out
 cb1d8191452bc1117cd4672e8b720bdf *inst/notes/src_changes_notes/init_generated_by_package_native_etc.c
 59da6b04ff8806d79d7398a56d1d4b8e *inst/notes/src_changes_notes/installation_by_hand.txt
+bde121dceb609f6009781d4e120d3e1d *inst/notes/src_changes_notes/installation_by_hand_0.26.6.5.txt
 e4e74f85e174118a017d00b83674d986 *inst/notes/src_changes_notes/itscale_source.txt
 3996e7c16bfb96fad295ee425815cb4d *inst/notes/src_changes_notes/original_FORTRAN/Makevars
 6ea0256da65e5704d2828ee837b999fa *inst/notes/src_changes_notes/original_FORTRAN/expokit.h
@@ -45,7 +47,7 @@ efa8a02d1f43ee0a3bd798aa770f4e24 *inst/notes/src_changes_notes/original_FORTRAN/
 beb70eabc13a9f34a336190f746d8637 *inst/notes/src_changes_notes/original_FORTRAN/lapack.f
 92bc2122d9dd8b7c7f8f746136cf7526 *inst/notes/src_changes_notes/original_FORTRAN/wrappers.cpp
 82529c1117428296fa03240bdeb9e492 *inst/notes/zexp_FORTRAN.f
-9aaabbd3750e1fdf225824b624f02180 *man/00_rexpokit-package.Rd
+ef7192cba0d098dd58ac4ed0fa12de67 *man/00_rexpokit-package.Rd
 ea506b53fc9bef2bd462c36f02e8733d *man/01_expm.Rd
 7cc750e65bb18c90dc48de8c7e1148a1 *man/expokit_dgexpv_Qmat.Rd
 ce7e18853c4ee65cc138345d85316991 *man/expokit_dgpadm_Qmat.Rd
@@ -65,7 +67,7 @@ e7d6b62bf61dbdcdd953170c1df1f5b3 *man/zzz_mat2coo_forloop.Rd
 e7c0f56e08a83f8adc0dd2b37823e736 *src/lapack/blas_mod.f
 38538d18e294ea47adf85dea42b302fe *src/lapack/lapack.f
 d580f6575446774ed929e9d73e3e0fe3 *src/mataid.f
-4df5be0481d9cfd2647845115de12584 *src/my_expokit.f
+7752d52e28007ec4c06a01f7e8a50f6a *src/my_expokit.f
 12e703aa822e1da37d5d173a27a0161d *src/my_matexp.f
 648308b2b809710bfcdac560ac770bf1 *src/wrappers.cpp
 4137c35c423ec89e512834c224e34783 *tests/expm.R
