@@ -1,8 +1,8 @@
 Package: rexpokit
 Type: Package
 Title: R Wrappers for EXPOKIT; Other Matrix Functions
-Version: 0.26.6.7
-Date: 2020-07-03
+Version: 0.26.6.9
+Date: 2023-06-20
 Authors@R: c(person("Nicholas J.", "Matzke", email="nickmatzke.ncse@gmail.com", role=
         c("aut", "cre", "cph")), person("Roger B.", "Sidje", email =
         "roger.b.sidje@ua.edu", role = c("aut", "cph")),
@@ -32,7 +32,7 @@ URL: http://phylo.wikidot.com/rexpokit
 License: GPL (>= 2)
 LazyLoad: yes
 ByteCompile: yes
-Packaged: 2020-07-03 04:55:21 UTC; nmat471
+Packaged: 2023-06-21 09:58:20 UTC; nickm
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2020-07-04 22:20:04 UTC
+Date/Publication: 2023-06-21 10:30:02 UTC

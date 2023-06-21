@@ -1,3 +1,23 @@
+CHANGES in rexpokit VERSION 0.26.6.8
+
+
+NEW FEATURES
+    
+    o None
+
+BUG FIXES
+
+    o None
+    
+OTHER CHANGES
+    
+    o Fixed type mismatch errors noted by Brian Ripley for: 
+      GNU extension not supported by the flang compiler
+    o Fixed some old/broken links.
+    o Changed personList() to c() in 00_rexpokit-package.Rd
+    o 
+
+
 
 CHANGES in rexpokit VERSION 0.26.6.7
 
@@ -13,7 +33,7 @@ BUG FIXES
 OTHER CHANGES
     
     o Fixed type mismatch errors noted by Brian Ripley with gfortran/gcc10 beta. 
-      These concerned e.g. 
+      
 
 
 
