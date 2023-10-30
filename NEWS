@@ -1,4 +1,61 @@
-CHANGES in rexpokit VERSION 0.26.6.8
+CHANGES in rexpokit VERSION 0.26.6.12
+
+
+NEW FEATURES
+    
+    o None
+
+BUG FIXES
+
+    o None
+    
+OTHER CHANGES
+    
+    o Updated dates and version number across all files
+    o Removed mistaken "SysData" field from the DESCRIPTION file
+
+
+
+CHANGES in rexpokit VERSION 0.26.6.11
+
+
+NEW FEATURES
+    
+    o None
+
+BUG FIXES
+
+    o None
+    
+OTHER CHANGES
+    
+    o Minor changes to fix "Found the following file with non-portable usage of KIND:"
+      Warnings on: r-devel-linux-x86_64-debian-clang
+                   r-devel-linux-x86_64-debian-gcc
+                   r-devel-linux-x86_64-fedora-clang
+                   r-devel-linux-x86_64-fedora-gcc
+                   r-devel-windows-x86_64
+
+
+CHANGES in rexpokit VERSION 0.26.6.10
+
+
+NEW FEATURES
+    
+    o None
+
+BUG FIXES
+
+    o None
+    
+OTHER CHANGES
+    
+    o Removed broken link to Foster 2001, Zen of likelihood unleashed, at
+      http://filogeografia.dna.ac/PDFs/phylo/Foster_01_EasyIntro_MLPhylo.pdf
+
+
+
+CHANGES in rexpokit VERSION 0.26.6.9
 
 
 NEW FEATURES
@@ -15,7 +72,6 @@ OTHER CHANGES
       GNU extension not supported by the flang compiler
     o Fixed some old/broken links.
     o Changed personList() to c() in 00_rexpokit-package.Rd
-    o 
 
 
 
